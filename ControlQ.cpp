@@ -57,13 +57,39 @@ void DestructAlgos()
     }
 }
 
+Algo* SelectAlgo(string algoNum)
+{
+    try {
+        int algoId = stoi(algoNum); // potential exception, see below
+        auto it = Algos.find(algoId);
+        if (it != Algos.end()) {
+            return it->second;
+        }
+        else {
+            cout << "Algo Id is out of range: " << algoId << endl;
+        }
+    }
+    catch (invalid_argument const& ex) {
+        cout << "Invalid value: " << ex.what() << endl;
+    }
+    catch (out_of_range const& ex) {
+        cout << "Out of range: " << ex.what() << endl;
+    }
+    return nullptr;
+}
+
 int main()
 {
     ConstructAlgos();
     PrintStartInfo();
     string algoNum;
     cin >> algoNum;
-
+    auto algoPtr = SelectAlgo(algoNum);
+    if (algoPtr) {
+        if (algoPtr->InputData(cin, cout)) {
+            algoPtr->ProcessData(cout);
+        }
+    }
     DestructAlgos();
 }
 

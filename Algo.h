@@ -5,7 +5,9 @@ using namespace std;
 class Algo
 {
 public:
-	string Name;
 	string ForWhat;
+
+	virtual bool InputData(istream& in, ostream& out) = 0;
+	virtual void ProcessData(ostream& out) = 0;
 };
 
