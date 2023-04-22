@@ -7,7 +7,7 @@ AlgoSortInsertion::AlgoSortInsertion() : AlgoSort() {
 
 void AlgoSortInsertion::ProcessData(ostream& out)
 {
-	for (int iUnsorted = 0; iUnsorted < CurrentArray.size()-1; iUnsorted++)
+	for (unsigned int iUnsorted = 0; iUnsorted + 1 < CurrentArray.size(); iUnsorted++)  
 	{
 		InsertToSortedPart(iUnsorted, CurrentArray[iUnsorted+1]);
 		PrintArray(out);

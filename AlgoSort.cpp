@@ -10,7 +10,10 @@ bool AlgoSort::InputData(istream& in, ostream& out)
 {
 	out << "Array as 2 4 1 ... n: ";
 	string arrayString;
-	getline(in, arrayString);
+	while (arrayString.length() == 0)
+	{
+		getline(in, arrayString);
+	}
 	return ParseInputStringAsArray(arrayString);
 }
 
@@ -19,7 +22,7 @@ bool AlgoSort::ParseInputStringAsArray(const string& arrayString)
 	string currentVal{};
 	for (int i = 0; i < arrayString.length(); i++)	// TODO: check how to replace seach for the string
 	{
-		if (arrayString[i] >= '0' && arrayString[i] <= 9)
+		if (arrayString[i] >= '0' && arrayString[i] <= '9')
 		{
 			currentVal += arrayString[i];  // how long can be the number? what if it is too long?
 		}
@@ -41,6 +44,7 @@ bool AlgoSort::ParseInputStringAsArray(const string& arrayString)
 	{
 		CurrentArray.push_back(StringToInt(currentVal));
 	}
+	return true;
 }
 
 int AlgoSort::StringToInt(const string& s)
