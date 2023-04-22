@@ -131,12 +131,16 @@
   <ItemGroup>
     <ClCompile Include="Algo.cpp" />
     <ClCompile Include="AlgoPdegK.cpp" />
+    <ClCompile Include="AlgoSort.cpp" />
+    <ClCompile Include="AlgoSortInsertion.cpp" />
     <ClCompile Include="ControlQ.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algo.h" />
     <ClInclude Include="AlgoPdegK.h" />
+    <ClInclude Include="AlgoSort.h" />
+    <ClInclude Include="AlgoSortInsertion.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

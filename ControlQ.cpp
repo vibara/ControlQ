@@ -18,6 +18,17 @@ will reduce the number of required multiplications almost in half.
 For an odd value of k, choosing x = 1 and y=k-1 will result in y being even, 
 and we can then simply repeat the same process as for the even case.
 
+2) 
+Insertion sort takes elements of the array sequentially, and maintains a sorted subarray 
+to the left of the current point. It does this by taking an element, finding its correct 
+position in the sorted array, and shifting all following elements by 1, leaving a space 
+for the element to be inserted.
+
+Insertion sort has an average and worst runtime of O(n^2), and a best runtime of O(n). 
+It doesn’t need any extra buffer, so space complexity is O(1). 
+It is efficient at sorting extremely short arrays due to a very low constant factor in its complexity. 
+It is also extremely good at sorting arrays that are already “almost” sorted. 
+A common use is for re-sorting arrays that have had some small updates to their elements.
 */ 
 
 
@@ -25,6 +36,7 @@ and we can then simply repeat the same process as for the even case.
 #include "pch.h"
 #include "Algo.h"
 #include "AlgoPdegK.h"
+#include "AlgoSortInsertion.h"
 
 using namespace std;
 
@@ -46,6 +58,7 @@ void PrintStartInfo()
 void ConstructAlgos()
 {
     Algos[1] = new AlgoPdegK();
+    Algos[2] = new AlgoSortInsertion();
 
 }
 
@@ -88,6 +101,9 @@ int main()
     if (algoPtr) {
         if (algoPtr->InputData(cin, cout)) {
             algoPtr->ProcessData(cout);
+        }
+        else {
+            cout << "Error in input data" << endl;
         }
     }
     DestructAlgos();
