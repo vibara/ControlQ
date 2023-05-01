@@ -29,6 +29,31 @@ It doesn’t need any extra buffer, so space complexity is O(1).
 It is efficient at sorting extremely short arrays due to a very low constant factor in its complexity. 
 It is also extremely good at sorting arrays that are already “almost” sorted. 
 A common use is for re-sorting arrays that have had some small updates to their elements.
+
+3)
+Heapsort starts by building a max heap. 
+A binary max heap is a nearly complete binary tree in which each parent node is larger or equal to its children. 
+The heap is stored in the same memory in which the original array elements are. Once the heap is formed, 
+it completely replaces the array. 
+After that, we take and remove the first element, restore the heap property, thus reducing the heap size by 1, 
+after which we place the max element at the end of that memory. 
+This is repeated until we empty out the heap, resulting in the smallest element being in the first place, 
+and the following elements being sequentially larger.
+
+Heapsort has reliable time complexity and doesn’t require any extra buffer space. 
+As a result, it is useful in software that requires reliable speed over optimal average runtime, 
+and/or has limited memory to operate with the data. 
+Thus, systems with real time requirements and memory constraints benefit the most from this algorithm.
+
+https://web.archive.org/web/20090315200203/http://iproc.ru/parallel-programming/lection-5/
+
+Default examples:
+
+
+    I:  1 3 5 2 4 6 7 2 3 8 -> 8 7 6 3 4 3 5 1 2 2 
+    II: 8 7 6 3 4 3 5 1 2 2 -> 1 2 2 3 3 4 5 6 7 8
+
+
 */ 
 
 
@@ -37,6 +62,7 @@ A common use is for re-sorting arrays that have had some small updates to their 
 #include "Algo.h"
 #include "AlgoPdegK.h"
 #include "AlgoSortInsertion.h"
+#include "AlgoSortHeap.h"
 
 using namespace std;
 
@@ -59,6 +85,7 @@ void ConstructAlgos()
 {
     Algos[1] = new AlgoPdegK();
     Algos[2] = new AlgoSortInsertion();
+    Algos[3] = new AlgoSortHeap();
 
 }
 

@@ -132,6 +132,7 @@
     <ClCompile Include="Algo.cpp" />
     <ClCompile Include="AlgoPdegK.cpp" />
     <ClCompile Include="AlgoSort.cpp" />
+    <ClCompile Include="AlgoSortHeap.cpp" />
     <ClCompile Include="AlgoSortInsertion.cpp" />
     <ClCompile Include="ControlQ.cpp" />
     <ClCompile Include="pch.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Algo.h" />
     <ClInclude Include="AlgoPdegK.h" />
     <ClInclude Include="AlgoSort.h" />
+    <ClInclude Include="AlgoSortHeap.h" />
     <ClInclude Include="AlgoSortInsertion.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>

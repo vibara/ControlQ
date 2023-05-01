@@ -5,8 +5,8 @@ class AlgoPdegK : public Algo
 {
 public:
     AlgoPdegK();
-    virtual bool InputData(istream& in, ostream& out);
-    virtual void ProcessData(ostream& out);
+    bool InputData(istream& in, ostream& out) override;
+    void ProcessData(ostream& out) override;
 
 private:
     int P = 0;

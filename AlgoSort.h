@@ -6,7 +6,7 @@ class AlgoSort : public Algo
 {
 public:
 	AlgoSort();
-	virtual bool InputData(istream& in, ostream& out);
+	bool InputData(istream& in, ostream& out) override;
 
 protected:
 	std::vector<int> CurrentArray;
