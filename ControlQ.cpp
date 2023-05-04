@@ -53,19 +53,33 @@ Default examples:
     I:  1 3 5 2 4 6 7 2 3 8 -> 8 7 6 3 4 3 5 1 2 2 
     II: 8 7 6 3 4 3 5 1 2 2 -> 1 2 2 3 3 4 5 6 7 8
 
+4) 
+Quicksort is performed by taking the first (leftmost) element of the array as a pivot point. 
+We then compare it to each following element. When we find one that is smaller, we move it to the left. 
+The moving is performed quickly by swapping that element with the first element after the pivot point, 
+and then swapping the pivot point with the element after it. 
+After going through the whole array, we take all points on the left of the pivot and call quicksort on that subarray, 
+and we do the same to all points on the right of the pivot. The recursion is performed until we reach subarrays of 0-1 elements in length.
+
+Quicksort is sensitive to the data provided. Without usage of random pivots, it uses O(n^2) time for sorting a full sorted array. 
+But by swapping random unsorted elements with the first element, and sorting afterwards, 
+the algorithm becomes less sensitive to data would otherwise cause worst-case behavior (e.g. already sorted arrays). 
+Even though it doesn’t have lower complexity than Heapsort or Merge sort, 
+it has a very low constant factor to its execution speed, 
+which generally gives it a speed advantage when working with lots of random data.
+
+https://medium.com/@dimko1/%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-quicksort-564754482e38
 
 */ 
-
-
 
 #include "pch.h"
 #include "Algo.h"
 #include "AlgoPdegK.h"
 #include "AlgoSortInsertion.h"
 #include "AlgoSortHeap.h"
+#include "AlgoSortQuick.h"
 
 using namespace std;
-
 
 map<int, Algo*> Algos;
 
@@ -86,6 +100,7 @@ void ConstructAlgos()
     Algos[1] = new AlgoPdegK();
     Algos[2] = new AlgoSortInsertion();
     Algos[3] = new AlgoSortHeap();
+    Algos[4] = new AlgoSortQuick();
 
 }
 

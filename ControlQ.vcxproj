@@ -134,6 +134,7 @@
     <ClCompile Include="AlgoSort.cpp" />
     <ClCompile Include="AlgoSortHeap.cpp" />
     <ClCompile Include="AlgoSortInsertion.cpp" />
+    <ClCompile Include="AlgoSortQuick.cpp" />
     <ClCompile Include="ControlQ.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="AlgoSort.h" />
     <ClInclude Include="AlgoSortHeap.h" />
     <ClInclude Include="AlgoSortInsertion.h" />
+    <ClInclude Include="AlgoSortQuick.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

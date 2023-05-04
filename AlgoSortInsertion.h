@@ -5,7 +5,7 @@ class AlgoSortInsertion : public AlgoSort
 {
 public:
 	AlgoSortInsertion();
-	virtual void ProcessData(ostream& out);
+	void ProcessData(ostream& out) override;
 
 private:
 	void InsertToSortedPart(int sortedSize, int newElement);
